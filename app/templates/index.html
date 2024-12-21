@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <h1>Todo List</h1>
+    <div>
+        <h3>Add a new todo item:</h3>
+        <form action="{{ url_for('add') }}" method="POST">
+            <input type="text" name="todoitem" placeholder="Enter task">
+            <input type="submit" value="Add Item" class="button">
+        </form>
+    </div>
+
+    <div>
+        <h2>Incomplete Items</h2>
+        <ul>
+            {% for todo in incomplete %}
+            <li>{{ todo.text }} 
+                <a href="{{ url_for('complete', id=todo.id) }}">Mark As Complete</a>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <h2>Completed Items</h2>
+        <ul>
+            {% for todo in complete %}
+            <li>{{ todo.text }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

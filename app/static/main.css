@@ -1,0 +1,39 @@
+body {
+    background-color: black;
+    color: red;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+a {
+    color: green;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.button {
+    color: white;
+    background-color: green;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: darkgreen;
+}
